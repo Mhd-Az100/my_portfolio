@@ -41,6 +41,8 @@ class MainScreen extends StatelessWidget {
               Expanded(
                 flex: 7,
                 child: SingleChildScrollView(
+                  physics: const BouncingScrollPhysics(
+                      parent: AlwaysScrollableScrollPhysics()),
                   child: Column(
                     children: [
                       ...children!,

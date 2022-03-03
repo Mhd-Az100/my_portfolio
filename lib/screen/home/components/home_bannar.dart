@@ -14,7 +14,8 @@ class HomeBannar extends StatelessWidget {
     'assets/img/img3.png',
     'assets/img/3.png',
     'assets/img/6.png',
-    'assets/img/7.png',
+    'assets/img/8.png',
+    'assets/img/9.png',
   ];
   @override
   Widget build(BuildContext context) {
@@ -47,10 +48,6 @@ class HomeBannar extends StatelessWidget {
                     ))
                 .toList(),
           )),
-          // Image.asset(
-          //   'assets/img/img1.jpg',
-          //   fit: BoxFit.cover,
-          // ),
           Container(
             color: darkColor.withOpacity(0.1),
           ),

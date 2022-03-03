@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 // import 'package:google_fonts/google_fonts.dart';n
 import 'package:my_portfolio/screen/Splach.dart';
+import 'package:my_portfolio/screen/home/home_screen.dart';
 
 import 'constants.dart';
 
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
         //       bodyText2: TextStyle(color: bodyTextColor),
         //     ),
       ),
-      home: const Splach(),
+      home: const HomeScreen(),
     );
   }
 }

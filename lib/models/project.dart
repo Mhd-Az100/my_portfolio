@@ -72,8 +72,15 @@ List<Project> demo_projects = [
   ),
   Project(
     url: "",
-    imagepath: '3',
+    imagepath: '9',
     title: "Deliviry v2",
     description: "E-Commerce app edit UI and add Coupons.",
-  )
+  ),
+  Project(
+    url: "",
+    imagepath: '8',
+    title: "UI Challeng",
+    description:
+        "UI e-commerce app with animaion splash screen and zoom drawer.",
+  ),
 ];

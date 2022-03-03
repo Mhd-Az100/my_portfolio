@@ -9,77 +9,58 @@ class ProjectCard extends StatelessWidget {
   final Project? project;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: const BorderRadius.all(Radius.circular(15)),
-        border: Border.all(
-            width: 1.0, color: primaryColor, style: BorderStyle.solid),
-        boxShadow: const [
-          BoxShadow(
-            color: primaryColor,
-            // blurStyle: BlurStyle.outer,
-            blurRadius: 5,
-            spreadRadius: 2,
-          ),
-        ],
-        color: secondaryColor,
-      ),
-      margin: const EdgeInsets.all(defaultPadding / 3),
-      padding: const EdgeInsets.all(defaultPadding),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            project!.title!,
-            maxLines: 2,
-            overflow: TextOverflow.ellipsis,
-            style: Theme.of(context).textTheme.subtitle2,
-          ),
-          const SizedBox(
-            height: defaultPadding,
-          ),
-          const Spacer(),
-          Text(
-            project!.description!,
-            maxLines: Responsive.isMobileLarge(context) ||
-                    Responsive.isTablet(context)
-                ? 2
-                : 4,
-            overflow: TextOverflow.ellipsis,
-            style: const TextStyle(height: 1.5),
-          ),
-          const Spacer(),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              TextButton(
-                onPressed: () {
-                  googleplay(project!.url!);
-                },
-                child: Visibility(
-                  visible: project!.url != "",
-                  child: const Text(
-                    'Google play >>',
-                    style: TextStyle(color: primaryColor),
-                  ),
+    return InkWell(
+      hoverColor: Colors.transparent,
+      onTap: () => showAlertDialog(
+          context, project!.imagepath!, project!.title!, project!.description!),
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: const BorderRadius.all(Radius.circular(15)),
+          border: Border.all(
+              width: 1.0,
+              color: primaryColor.withOpacity(0.3),
+              style: BorderStyle.solid),
+          boxShadow: const [
+            BoxShadow(
+              color: primaryColor,
+              // blurStyle: BlurStyle.outer,
+              blurRadius: 5,
+              spreadRadius: 2,
+            ),
+          ],
+          color: secondaryColor,
+        ),
+        margin: const EdgeInsets.all(defaultPadding / 3),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Expanded(
+              flex: 3,
+              child: Container(
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  borderRadius: const BorderRadius.all(Radius.circular(15)),
+                  image: DecorationImage(
+                      image: AssetImage(
+                        'assets/img/${project!.imagepath}.png',
+                      ),
+                      fit: BoxFit.cover),
                 ),
               ),
-              InkWell(
-                onTap: () {
-                  showAlertDialog(
-                      context, project!.imagepath!, project!.title!);
-                },
-                child: Image.asset(
-                  'assets/img/camera.png',
-                  scale: Responsive.isMobileLarge(context) ||
-                          Responsive.isTablet(context)
-                      ? (Responsive.isMobile(context) ? 33 : 25)
-                      : 20,
+            ),
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  project!.title!,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  style: Theme.of(context).textTheme.subtitle2,
                 ),
-              )
-            ],
-          ),
-        ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -93,10 +74,13 @@ class ProjectCard extends StatelessWidget {
     }
   }
 
-  showAlertDialog(BuildContext context, String img, String name) {
+  showAlertDialog(BuildContext context, String img, String name, String desc) {
     // set up the button
     Widget okButton = FlatButton(
-      child: Text("OK"),
+      child: const Text(
+        "OK",
+        style: TextStyle(color: primaryColor),
+      ),
       onPressed: () {
         Navigator.pop(context);
       },
@@ -109,6 +93,10 @@ class ProjectCard extends StatelessWidget {
           ? const Text('Old Project, \n Image not found!')
           : Image.asset('assets/img/$img.png'),
       actions: [
+        Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Text(desc),
+        ),
         okButton,
       ],
     );

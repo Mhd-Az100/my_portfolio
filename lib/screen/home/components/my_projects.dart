@@ -54,18 +54,21 @@ class ProjectGridView extends StatelessWidget {
   final double? childAspectRatio;
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
-      itemCount: demo_projects.length,
-      physics: const NeverScrollableScrollPhysics(),
-      shrinkWrap: true,
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: crossAxisAlignment!,
-        childAspectRatio: childAspectRatio!,
-        crossAxisSpacing: defaultPadding,
-        mainAxisSpacing: defaultPadding,
-      ),
-      itemBuilder: (context, index) => ProjectCard(
-        project: demo_projects[index],
+    return Padding(
+      padding: const EdgeInsets.only(right: 20),
+      child: GridView.builder(
+        itemCount: demo_projects.length,
+        physics: const NeverScrollableScrollPhysics(),
+        shrinkWrap: true,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: crossAxisAlignment!,
+          childAspectRatio: childAspectRatio!,
+          crossAxisSpacing: defaultPadding,
+          mainAxisSpacing: defaultPadding,
+        ),
+        itemBuilder: (context, index) => ProjectCard(
+          project: demo_projects[index],
+        ),
       ),
     );
   }

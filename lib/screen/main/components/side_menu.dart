@@ -35,10 +35,6 @@ class SideMenu extends StatelessWidget {
                       title: 'City',
                       text: 'Damascus',
                     ),
-                    AreaInfoText(
-                      title: 'Age',
-                      text: '21',
-                    ),
                     const Skills(),
                     const SizedBox(
                       height: defaultPadding,
