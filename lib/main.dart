@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
         //       bodyText2: TextStyle(color: bodyTextColor),
         //     ),
       ),
-      home: const HomeScreen(),
+      home: const Splach(),
     );
   }
 }

@@ -83,7 +83,7 @@ class Linkes extends StatelessWidget {
 
   cv() async {
     var url =
-        "https://drive.google.com/file/d/1gfcOYMFBGdmYAyD5Tr-3k4FRzUQ8obft/view?usp=sharing";
+        "https://drive.google.com/file/d/1tnId1K15cTm8lr3IUUKEeU_l6ZPrXYK1/view?usp=sharing";
     if (await canLaunch(url)) {
       await launch(url);
     } else {

@@ -103,7 +103,6 @@ class MyBuildAnimation extends StatelessWidget {
             const SizedBox(
               width: defaultPadding / 2,
             ),
-          const Text('I build '),
           Responsive.isMobile(context)
               ? const Expanded(child: AnimatedText())
               : const AnimatedText(),
@@ -136,6 +135,14 @@ class AnimatedText extends StatelessWidget {
       ),
       TyperAnimatedText(
         'Uber App With Firebase',
+        speed: const Duration(milliseconds: 60),
+      ),
+      TyperAnimatedText(
+        'UI Challenge',
+        speed: const Duration(milliseconds: 60),
+      ),
+      TyperAnimatedText(
+        'Animation by flutter',
         speed: const Duration(milliseconds: 60),
       ),
     ]);

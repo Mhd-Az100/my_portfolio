@@ -18,7 +18,7 @@ List<Project> demo_projects = [
     imagepath: '7',
     title: "Syria Online",
     description:
-        "My firs e-commerce app in flutter ,statemanagment Provider , With GoogleMaps & connect with Dashboard laravel , the feature are : display nearby store on the map & reating & comments with images.",
+        "My firs e-commerce app using flutter ,statemanagment Provider , With GoogleMaps & connect with Dashboard laravel , the feature are : display nearby store on the map & reating & comments with images.",
   ),
   Project(
     url: "https://play.google.com/store/apps/details?id=com.ertiqasoft.alsamah",
@@ -79,7 +79,7 @@ List<Project> demo_projects = [
   Project(
     url: "",
     imagepath: '8',
-    title: "UI Challeng",
+    title: "UI Challenge",
     description:
         "UI e-commerce app with animaion splash screen and zoom drawer.",
   ),
